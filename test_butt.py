@@ -2,16 +2,16 @@ import RPi.GPIO as GPIO
 import gpios
 from statemachine import StateMachine
 
-# Use broadcome board pins
+# Use broadcom board pins
 GPIO.setmode(GPIO.BCM)
 
 # Active low signals
-GPIO.setup(gpios.CLEAR, GPIO.IN)     # clear
-GPIO.setup(gpios.BUTT1, GPIO.IN)     # butt1
-GPIO.setup(gpios.BUTT2, GPIO.IN)     # butt2
-GPIO.setup(gpios.BUTT3, GPIO.IN)     # butt3
-GPIO.setup(gpios.BUTT4, GPIO.IN)     # butt4
-GPIO.setup(gpios.BUTT5, GPIO.IN)     # butt5
+GPIO.setup(gpios.CLEAR, GPIO.IN)
+GPIO.setup(gpios.BUTT1, GPIO.IN)
+GPIO.setup(gpios.BUTT2, GPIO.IN)
+GPIO.setup(gpios.BUTT3, GPIO.IN)
+GPIO.setup(gpios.BUTT4, GPIO.IN)
+GPIO.setup(gpios.BUTT5, GPIO.IN)
 
 butt_num = 0
 
@@ -62,4 +62,3 @@ if __name__== "__main__":
     m.run(1)
 
 GPIO.cleanup()
-

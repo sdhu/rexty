@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import gpios
 
-# Use broadcome board pins
+# Use broadcom board pins
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(gpios.HOOK, GPIO.IN)
@@ -22,7 +22,7 @@ while True:
             if not is_active_done:
                print "Active"
             is_active_done = 1
-               
+
             if GPIO.wait_for_edge(gpios.NUM, GPIO.FALLING, timeout=90) is not None:
                 num += 1 # weird with RISING and BOTH?
                 print "pulse: " + str(num)
@@ -38,4 +38,3 @@ while True:
         break
 
 GPIO.cleanup()
-
